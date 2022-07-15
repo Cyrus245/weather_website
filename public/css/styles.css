@@ -58,7 +58,10 @@ body {
 .welcome {
 
     font-size: 1.7rem;
-    color: #000000;
+    color: #2C3639;
+    font-family: 'Edu SA Beginner',
+        cursive;
+    font-weight: bold;
 
 }
 
