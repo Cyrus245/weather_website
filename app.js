@@ -51,6 +51,7 @@ app.post("/", (request, res) => {
             const weatherIcon = weatherData.weather[0].icon;
             const weatherDescription = weatherData.weather[0].description;
             const imgUrl = "http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
+            const cntry = weatherData.sys.country;
 
 
 
@@ -70,6 +71,7 @@ app.post("/", (request, res) => {
                 windSpeed: windSpeed,
                 imgUrl: imgUrl,
                 windSpeed: windSpeed,
+                country:cntry,
 
 
             });

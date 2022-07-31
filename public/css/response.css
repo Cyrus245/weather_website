@@ -82,5 +82,12 @@ h1 {
 .w-img {
 
     height: 70px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.country {
+
+
+    font-size: .9rem;
+
 }
