@@ -11,12 +11,14 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
+app.set('view engine', 'ejs');
+
 
 app.get("/", (req, res) => {
 
 
 
-    res.sendFile(__dirname + "/index.html");
+    res.render('home')
 
 
 
@@ -53,10 +55,24 @@ app.post("/", (request, res) => {
 
 
 
-            res.write(`<h1>The weather condition of <span style = "color:red;text-align:center">"${cityName}"</span> is ${weatherDescription}.</h1>`);
-            res.write(`<p><i style = "color:blue">The temparature of ${cityName} is ${temp} degree celcius.The wind speed is ${windSpeed}</i></p>`);
-            res.write(`<img src = ${imgUrl}>`);
-            res.send();
+
+
+            // res.write(`<h1>The weather condition of <span style = "color:red;text-align:center">"${cityName}"</span> is ${weatherDescription}.</h1>`);
+            // res.write(`<p><i style = "color:blue">The temparature of ${cityName} is ${temp} degree celcius.The wind speed is ${windSpeed}</i></p>`);
+            // res.write(`<img src = ${imgUrl}>`);
+            // res.send();
+
+            res.render('response', {
+
+                cName: cityName,
+                wDesc: weatherDescription,
+                temp: temp,
+                windSpeed: windSpeed,
+                imgUrl: imgUrl,
+                windSpeed: windSpeed,
+
+
+            });
 
 
         })
@@ -67,6 +83,14 @@ app.post("/", (request, res) => {
 
 
 
+
+
+})
+
+
+app.get('/home', (req, res) => {
+
+    res.redirect('/');
 
 
 })
